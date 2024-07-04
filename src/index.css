@@ -24,6 +24,7 @@
 .imageContainer{
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
 }
 .bgImage{
   width: 100%;
@@ -158,13 +159,15 @@ flex: 1;
  @media (min-width:640px) {
   .sidebar{
     position: relative;
-    /* inset: unset; */
-    width: 30%;
+    inset: unset;
+    min-width: 30%;
+    max-height: 100vh;
     box-shadow: 0 0 40px 1px #030615 ;
 
   }
   .sidebarContents{
     inset: unset;
+    width: 100%;
   }
   
  }
