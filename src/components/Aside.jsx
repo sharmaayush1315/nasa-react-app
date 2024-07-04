@@ -1,11 +1,12 @@
-export default function Aside() {
+export default function Aside(props) {
+	const { handleToggleModal, data } = props;
 	return (
 		<div className="sidebar">
-			<div className="bgOverlay"></div>
+			<div onClick={handleToggleModal} className="bgOverlay"></div>
 			<div className="sidebarContents">
-				<h2>The Mandi Mela</h2>
-				<div>
-					<p>Description</p>
+				<h2>{data?.title}</h2>
+				<div className="descriptionContanier">
+					<p className="descriptionTitle">{data?.date}</p>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
 						eligendi facilis incidunt, quis vero ipsam aspernatur eius aperiam
@@ -13,6 +14,9 @@ export default function Aside() {
 						consectetur, architecto animi quis non!
 					</p>
 				</div>
+				<button onClick={handleToggleModal}>
+					<i className="fa-solid fa-arrow-right"></i>
+				</button>
 			</div>
 		</div>
 	);
